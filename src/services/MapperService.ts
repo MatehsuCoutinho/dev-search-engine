@@ -8,7 +8,7 @@ export class MapperService {
             title: item.title,
             content: item.body ?? '',
             url: item.link,
-            author: item.owner?.display_name ?? 'Unknown',
+            author: item.owner?.display_name || 'Unknown',
             tags: item.tags ?? [],
             score: item.score,
             isAnswered: item.is_answered,
