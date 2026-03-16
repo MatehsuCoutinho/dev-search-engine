@@ -22,7 +22,7 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-app.get('/search', (req, res) => searchController.search(req, res));
+app.post('/search', (req, res) => searchController.search(req, res));
 
 // Inicializa o servidor
 const meilisearchService = new MeilisearchService();

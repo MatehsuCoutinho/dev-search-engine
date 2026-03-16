@@ -5,13 +5,15 @@ const searchService = new SearchService();
 
 export class SearchController {
     async search(req: Request, res: Response): Promise<void> {
-        const query = req.query.q as string;
+        const query = req.body?.q as string;
 
-        // Valida o parâmetro
         if (!query || query.trim() === '') {
             res.status(400).json({
-                error: 'Missing required query parameter: q',
-                example: '/search?q=react hooks',
+                error: 'Missing required parameter: q',
+                example: {
+                    url: 'POST /search',
+                    body: { q: 'react hooks' },
+                },
             });
             return;
         }
