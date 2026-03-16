@@ -3,8 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 import swaggerUi from 'swagger-ui-express';
-import { StackOverflowProvider } from './providers/StackOverflowProvider';
-import { MapperService } from './services/MapperService';
 import { MeilisearchService } from './services/MeilisearchService';
 import { SearchController } from './controllers/SearchController';
 import { swaggerDocument } from './docs/swagger';

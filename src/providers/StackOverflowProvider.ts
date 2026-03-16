@@ -8,10 +8,6 @@ export class StackOverflowProvider {
 
     constructor() {
         this.apiKey = process.env.STACK_EXCHANGE_API_KEY || '';
-
-        if (!this.apiKey) {
-            console.warn('STACK_EXCHANGE_API_KEY não configurada. Limite de requisições será mais restrito.');
-        }
     }
 
     async search(query: string): Promise<IStackOverflowResponse> {
